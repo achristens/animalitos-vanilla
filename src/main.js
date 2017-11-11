@@ -1,5 +1,6 @@
 // Initialize the player class (player.js):
 const player = new Player();
+const album  = new Album();
 
 // Create new section on page and append to the body:
 const animalsContainer = document.createElement('section');
@@ -29,7 +30,9 @@ const createAnimalFigure = (animal) => {
   // Pass event listeners what to listen for (a click) and which function to execute when that happens
   figure.addEventListener('click', (event) => {
     player.play(animal.sound);
+    album.show(animal)
   });
+  
   return figure;
 }
 

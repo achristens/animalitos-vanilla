@@ -6,7 +6,7 @@ class Player{
   play(songUrl){
     this.audio.setAttribute('src', songUrl); //the audios source URL will be passed to the function, songURL
     this.audio.play(); //this actually plays the audio you are trying to play
-  }
+  } 
 }
 
 
