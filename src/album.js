@@ -13,7 +13,7 @@ class Album {
     const clientID = '8ada5ee6cc856eed0670a3c10b66c19b1a8a1b341c9efb66c313c49597806e16';
 
     // This is one of many ways to call an API from javascript, this is where you add the end point - note the '.then' function the end, it's called a 'promise':
-    fetch(`https://api.unsplash.com/search/photos?client_id=${clientID}&query='${animal.name}`).then((response) => {
+    fetch(`https://api.unsplash.com/search/photos?client_id=${clientID}&query=${animal.name}`).then((response) => {
       return response.json(); //Once you have the JSON, then...
     }).then(data => {
       this.displayImages(data.results); //data.results is from the JSON response - you can look at this in Postman or the console
