@@ -2,6 +2,13 @@
 const player = new Player();
 const album  = new Album();
 
+document.body.addEventListener('keyup', (event) => {
+  // To see what the codes are for all keyup events:console.log(event);
+  if (event.keyCode === 27) {
+    album.hide();
+  }
+});
+
 // Create new section on page and append to the body:
 const animalsContainer = document.createElement('section');
 animalsContainer.className = 'animals';
@@ -32,7 +39,7 @@ const createAnimalFigure = (animal) => {
     player.play(animal.sound);
     album.show(animal)
   });
-  
+
   return figure;
 }
 

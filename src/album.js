@@ -16,7 +16,19 @@ class Album {
     fetch(`https://api.unsplash.com/search/photos?client_id=${clientID}&query='${animal.name}`).then((response) => {
       return response.json(); //Once you have the JSON, then...
     }).then(data => {
-      console.log(data);
+      this.displayImages(data.results); //data.results is from the JSON response - you can look at this in Postman or the console
     });
+  }
+
+  displayImages(images){
+    const imageTags = images.map((image) => {
+      return `<img src="${image.urls.regular}" alt="${image.description}" />`;
+    });
+
+    this.section.innerHTML = imageTags.join('');
+  }
+
+  hide(){
+    this.section.classList.remove('active');
   }
 }
